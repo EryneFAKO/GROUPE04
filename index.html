@@ -1,52 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu du Groupe</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maquette - Groupe N° ____</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    a{
+        text-decoration: none;
+    }
+    :root{
+      --blue:#5fa4dd;   /* fond bleu principal */
+      --blue-dark:#3b86bd;
+      --btn-gray:#c9c9c9;
+      --btn-shadow: rgba(0,0,0,0.35);
+    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family: "Montserrat", Arial, sans-serif;background:transparent;color:#222;}
+
+    /* Conteneur global */
+    .page{
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+
+    /* Banniere (header) */
+    header{
+      background: linear-gradient(180deg,var(--blue) 0%, #66b2e7 100%);
+      height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-bottom:3px solid rgba(0,0,0,0.08);
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.05);
+    }
+    header h1{
+      margin:0;
+      color:#fff;
+      letter-spacing:2px;
+      font-weight:600;
+      font-size:30px;
+    }
+
+    /* Zone principale: sidebar + contenu */
+    .main {
+      display:flex;
+      flex:1;
+      align-items:stretch;
+      gap:0;
+      padding: 14px 0; /* espace top/bottom entre header/footer */
+    }
+
+    /* Sidebar gauche */
+    .sidebar{
+      width:220px;
+      background: linear-gradient(180deg, #5da2dc 0%, #4a94cb 100%);
+      padding:18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      align-items:flex-start;
+      border-right:4px solid rgba(0,0,0,0.06);
+      box-shadow: inset 2px 0 0 rgba(255,255,255,0.05);
+    }
+
+    /* Les boutons style "panneau" */
+    .menu-btn{
+      width:100%;
+      height:64px;
+      background: linear-gradient(180deg,#d0d0d0 0,#a7a7a7 100%);
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      padding-left:20px;
+      font-size:26px;
+      color:#fff;
+      font-weight:300;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+      box-shadow: 6px 6px 0 0 var(--btn-shadow), inset 0 2px 0 rgba(255,255,255,0.25);
+      border: none;
+      cursor:pointer;
+      user-select:none;
+    }
+    .menu-btn:active{ transform: translateY(1px); box-shadow: 4px 4px 0 0 rgba(0,0,0,0.3); }
+
+    /* Zone de contenu blanche */
+    .content-wrap{
+      flex:1;
+      padding:0 18px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .content{
+      background:#fff;
+      width:100%;
+      height: calc(100% - 0px);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 0 0 6px rgba(0,0,0,0.00);
+      border-left: none;
+      min-height:420px;
+    }
+
+    /* Pied de page */
+    footer{
+      background: linear-gradient(180deg,var(--blue) 0%, #6eb6ea 100%);
+      height:66px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 10px 12px 12px 12px;
+      border-radius:10px;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.08);
+    }
+    footer p{
+      color:#fff;
+      margin:0;
+      font-size:22px;
+      font-weight:500;
+      letter-spacing:0.5px;
+    }
+
+    /* Styles responsifs simples */
+    @media (max-width:720px){
+      .sidebar{ width:160px; padding:12px; gap:12px; }
+      .menu-btn{ height:52px; font-size:20px; padding-left:14px; }
+      header{ height:72px; }
+      header h1{ font-size:20px; }
+      footer{ height:56px; }
+      footer p{ font-size:16px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>GROUPE N°04</h1>
-        </header>
-        
-        <main class="menu-container">
-            <div class="menu-card">
-                <h2 class="menu-title">Notre Menus</h2>
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <span class="menu-number">01</span>
-                        <span class="menu-name">LONTSI Eliel Christian</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-number">02</span>
-                        <span class="menu-name">DIOGNE BA'AIDIOG</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-number">03</span>
-                        <span class="menu-name">FAKO MBAPPE Eryne Joyce</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-number">04</span>
-                        <span class="menu-name">PIAH-LEUH Arthur</span>
-                    </li>
-                    <li class="menu-item">
-                        <span class="menu-number">05</span>
-                        <a href="wesley.html"><span class="menu-name">MBANYA Wesley Chrisatin</span></a>
-                    <li class="menu-item">
-                        <span class="menu-number">06</span>
-                        <span class="menu-name">NGUE Hamilton Fresnel</span>
-                    </li>
-                </ul>
-            </div>
-        </main>
-        
-        <footer>
-            <p>Copyright tous droits réservés Groupe N°__</p>
-        </footer>
+  <div class="page">
+    <header>
+      <h1>GROUPE N°04</h1>
+    </header>
+
+    <div class="main">
+      <aside class="sidebar" aria-label="Menu latéral">
+        <a href="lontsi.html"><button class="menu-btn" type="button">LONTSI Christian</button></a>
+        <a href="wesley.html"><button class="menu-btn" type="button">MBANYA Wesley</button></a>
+        <a href="ndiogne.html"><button class="menu-btn" type="button">NDIOGNE</button></a>
+        <a href="ngue.html"><button class="menu-btn" type="button">NGUE Hamilton</button></a>
+        <a href="fako.html"><button class="menu-btn" type="button">FAKO Eryne</button></a>
+      </aside>
+
+      <div class="content-wrap">
+        <section class="content" aria-label="Zone de contenu">
+          <!-- Zone blanche centrale, place ton contenu ici -->
+        </section>
+      </div>
     </div>
+
+    <footer>
+      <p>Copyright tous droits réservés Groupe N°_____</p>
+    </footer>
+  </div>
 </body>
 </html>
